@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@color/white">
+    <!--扫描界面-->
+    <LinearLayout
+        android:id="@+id/bottom_scan"
+        android:layout_width= "0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_scan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@mipmap/ic_scan_unselected"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_bottom_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tab_scan"
+            android:textColor="@color/bottom_tab_unselected_color"
+            android:textSize="11sp"
+            />
+    </LinearLayout>
+    <!--历史界面-->
+    <LinearLayout
+        android:id="@+id/bottom_history"
+        android:layout_width= "0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_history"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@mipmap/ic_history_unselected"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_bottom_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tab_history"
+            android:textColor="@color/bottom_tab_unselected_color"
+            android:textSize="11sp"
+            />
+    </LinearLayout>、
+    <!--创建界面-->
+    <LinearLayout
+        android:id="@+id/bottom_create"
+        android:layout_width= "0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_create"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@mipmap/ic_create_unselected"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_bottom_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tab_create"
+            android:textColor="@color/bottom_tab_unselected_color"
+            android:textSize="11sp"
+            />
+    </LinearLayout>
+    <!--设置界面-->
+    <LinearLayout
+        android:id="@+id/bottom_settings"
+        android:layout_width= "0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_settings"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@mipmap/ic_setting_selected"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_bottom_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tab_settings"
+            android:textColor="@color/bottom_tab_selected_color"
+            android:textSize="11sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

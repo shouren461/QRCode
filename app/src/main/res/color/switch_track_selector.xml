@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--track轨道选中显示是浅蓝-->
+    <item android:color="@color/light_blue" android:state_checked="true"/>
+    <!--默认未选中是浅灰色-->
+    <item android:color="@color/grey_track"/>
+</selector>

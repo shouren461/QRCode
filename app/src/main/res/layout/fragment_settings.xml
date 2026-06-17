@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/grey">
+    <LinearLayout
+        android:id="@+id/ll_settings_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:background="@color/grey">
+
+        <TextView
+            android:layout_width="66dp"
+            android:layout_height="26dp"
+            android:text="@string/tab_settings"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+        android:text="@string/general_settings"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        android:gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@drawable/layout_bg_rectangle"
+        android:layout_gravity="center_horizontal"
+        >
+        <TextView
+            android:id="@+id/tv_Dark_Mode"
+            android:layout_width="81dp"
+            android:layout_height="21dp"
+            android:text="@string/dark_mode"
+            android:textColor="@color/text_color"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            />
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_dark_mode"
+            android:layout_width="41dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="205dp"
+            android:layout_marginTop="20dp"
+            app:trackTint="@color/switch_track_selector"
+            app:thumbTint="@color/switch_thumb_selector"
+            android:track="@drawable/layout_bg_track_dark_mode"
+            android:thumb="@drawable/layout_bg_thumb_dark_mode"
+            />
+    </LinearLayout>
+
+</LinearLayout>
