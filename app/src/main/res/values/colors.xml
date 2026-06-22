@@ -9,15 +9,20 @@
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#1F222A</color>
-    <color name="grey">#EAEDF1</color>   <!--浅灰色,白天模式下使用-->
+    <color name="grey">#F5F6FA</color>   <!--浅灰色,白天模式下使用-->
     <color name="scan_frame">#E0E0E0</color>
     <!--用来区分滑动控件的颜色-->
     <color name="light_blue">#80B5FF</color>
     <color name="deep_blue">#0188FE</color>
-    <color name="text_color">#1F222A</color>
-    <color name="grey_track">#E0E0E0</color> <!-- 较深的灰色 -->
-    <color name="grey_thumb">#ECECEC</color> <!-- 您要求的灰色 -->
-
+    <color name="black_text">#1F222A</color>
+    <color name="grey_text">#7F88A1</color>
+    <color name="blue_text">#0188FE</color>
+    <color name="grey_track">#E0E0E0</color> <!-- 轨道使用较深的灰色 -->
+    <color name="grey_thumb">#ECECEC</color> <!-- 按钮选用要求的灰色 -->
+    <color name="bg_input_color">#EAEDF1</color>
+    <color name="bg_tabs_holder">#E5E7EC</color> <!--Tab切换未选中背景色-->
+    <color name="bg_tabs_selected">#1877F2</color> <!--Tab切换选中颜色-->
+    <color name="bg_create_button_color">#9AD0FF</color> <!--创建按钮颜色-->
     <!-- SHOUREN 蓝色主题色 -->
     <!-- 主色、深色主色、强调色已在基础颜色中定义，此处不再重复 -->
 

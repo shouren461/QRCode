@@ -14,7 +14,7 @@
     <color name="black">#FFFFFF</color>               <!-- 原深灰文字 -> 浅灰白文字（确保可读性） -->
     <color name="grey">#121212</color>                <!-- 原亮灰色 -> 深灰色（用于深色模式的灰底） -->
     <color name="scan_frame">#404040</color>          <!-- 原扫描框灰色 -> 适配深色背景 -->
-    <color name="text_color">#FFFFFF</color>
+    <color name="black_text">#FFFFFF</color>
 
     <!-- ViewLib 组件专用颜色 - 深色模式 -->
     <!-- 对话框 -->

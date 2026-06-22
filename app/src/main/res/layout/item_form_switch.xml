@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="14dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp">
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/grey_text"
+        android:textSize="16sp"
+        />
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:trackTint="@color/switch_track_selector"
+        app:thumbTint="@color/switch_thumb_selector"
+        android:track="@drawable/layout_bg_track_dark_mode"
+        android:thumb="@drawable/layout_bg_thumb_dark_mode"
+        />
+
+</LinearLayout>

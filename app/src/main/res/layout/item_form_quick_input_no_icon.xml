@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_input_form"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="18dp"
+        android:paddingEnd="14dp">
+
+        <EditText
+            android:id="@+id/et_input_quick_no_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/black_text"
+            android:textColorHint="@color/grey_text"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="9dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_quick_prefix_no_icon"
+            android:layout_width="96dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:text="@string/hint_prefix"
+            android:textColor="@color/black_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_input_form" />
+
+        <TextView
+            android:id="@+id/tv_quick_suffix_no_icon"
+            android:layout_width="96dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:text="@string/hint_suffix"
+            android:textColor="@color/black_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_input_form" />
+    </LinearLayout>
+</LinearLayout>

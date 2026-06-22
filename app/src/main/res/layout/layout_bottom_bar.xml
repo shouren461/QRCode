@@ -74,15 +74,15 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_horizontal"
-            app:srcCompat="@mipmap/ic_create_unselected"
+            app:srcCompat="@mipmap/ic_create_selected"
             />
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_bottom_scan"
+            android:id="@+id/tv_bottom_create"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/tab_create"
-            android:textColor="@color/bottom_tab_unselected_color"
+            android:textColor="@color/bottom_tab_selected_color"
             android:textSize="11sp"
             />
     </LinearLayout>
@@ -101,7 +101,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_horizontal"
-            app:srcCompat="@mipmap/ic_setting_selected"
+            app:srcCompat="@mipmap/ic_setting_unselected"
             />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_bottom_settings"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/tab_settings"
-            android:textColor="@color/bottom_tab_selected_color"
+            android:textColor="@color/bottom_tab_unselected_color"
             android:textSize="11sp"
             />
     </LinearLayout>
