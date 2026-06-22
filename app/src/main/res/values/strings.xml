@@ -137,8 +137,9 @@
     <string name="dialog_title_language">请选择语言</string>
     <string name="toast_lang_changed">语言已切换</string>
     <string name="current_language">当前语言类型:</string>
-    <string name="dark_mode">黑夜模式</string>
-    <string name="general_settings">常规设置</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="general_settings">General settings</string>
+    <string name="setting_page_title">Settings</string>
 
     <!--创建页面文字-->
     <string name="create_page_title">Creator</string>
