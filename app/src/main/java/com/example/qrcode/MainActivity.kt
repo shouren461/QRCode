@@ -113,7 +113,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         }
         //历史Tab,点击监听
         findViewById<View>(R.id.bottom_history).setOnClickListener {
-            Toast.makeText(this,getString(R.string.toast_feature_is_not_available), Toast.LENGTH_SHORT).show()
+            onBottomTabSelect(TAB_TYPE_HISTORY)
         }
 
         //创建Tab,点击监听

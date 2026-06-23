@@ -11,6 +11,7 @@
     <color name="black">#1F222A</color>
     <color name="grey">#F5F6FA</color>   <!--浅灰色,白天模式下使用-->
     <color name="scan_frame">#E0E0E0</color>
+    <color name="bg_grey">#EAEDF1</color> <!--历史记录界面背景-->
     <!--用来区分滑动控件的颜色-->
     <color name="light_blue">#80B5FF</color>
     <color name="deep_blue">#0188FE</color>

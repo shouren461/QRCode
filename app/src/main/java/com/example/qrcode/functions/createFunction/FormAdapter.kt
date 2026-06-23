@@ -79,12 +79,12 @@ class FormAdapter(private val fields: List<FieldConfig>) : RecyclerView.Adapter<
        val inflater = LayoutInflater.from(parent.context)
         //根据不同的个ViewType加载不同的xml布局文件并绑定到对应的ViewHolder上
         return when(viewType){
-            FieldType.INPUT_NO_ICON.ordinal -> InputNoIconViewHolder(inflater.inflate(R.layout.item_form_input_text,parent,false))
+            FieldType.INPUT_NO_ICON.ordinal -> InputNoIconViewHolder(inflater.inflate(R.layout.item_form_input_no_icon,parent,false))
             FieldType.MULTILINE.ordinal -> MultilineViewHolder(inflater.inflate(R.layout.item_form_multiple_lines,parent,false))
             FieldType.TEXT_COUNTER.ordinal -> CounterViewHolder(inflater.inflate(R.layout.item_form_text_counter,parent,false))
             FieldType.DROPDOWN.ordinal -> DropdownViewHolder(inflater.inflate(R.layout.item_form_dropdown,parent,false))
             FieldType.SWITCH.ordinal -> SwitchViewHolder(inflater.inflate(R.layout.item_form_switch,parent,false))
-            FieldType.DATE.ordinal -> DateViewHolder(inflater.inflate(R.layout.item_form_time,parent,false))
+            FieldType.DATE.ordinal -> DateViewHolder(inflater.inflate(R.layout.item_form_date,parent,false))
             FieldType.DATETIME.ordinal -> DateTimeViewHolder(inflater.inflate(R.layout.item_form_datetime,parent,false))
             FieldType.QUICK_INPUT.ordinal -> QuickInputViewHolder(inflater.inflate(R.layout.item_form_quick_input,parent,false))
             FieldType.QUICK_INPUT_NO_ICON.ordinal -> QuickInputNoIconViewHolder(inflater.inflate(R.layout.item_form_quick_input_no_icon,parent,false))
