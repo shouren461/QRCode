@@ -93,6 +93,7 @@
     <!-- Errors 错误提示-->
     <string name="error_record_not_found">记录不存在</string>
     <string name="error_qr_image_not_found">二维码图片不存在</string>
+    <string name="error_loading_img">Error loading image</string>
     <string name="error_generation_failed">生成失败</string>
     <string name="error_no_history">暂无历史记录</string>
     <string name="error_permission_refused">权限被拒绝</string>
@@ -195,6 +196,10 @@
     <string name="scan_page_gallery">Gallery</string>
     <string name="scan_page_flashlight">Flashlight</string>
     <string name="scan_page_batch">Batch</string>
+    <string name="scan_page_batch_hint">Batch scanning is under development</string>
     <!--扫描结果文字-->
     <string name="scan_result_content">https://fabric.io/javasoldiers-projects/androidappsall.video.downloader.allvideodownloader/dashboard</string>
+    <string name="scan_result_Copy">Copy</string>
+    <string name="scan_result_Share">Share</string>
+    <string name="scan_result_copy_hint">Copied to clipboard"</string>
 </resources>

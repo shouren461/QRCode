@@ -21,7 +21,7 @@
             android:id="@+id/btn_scan_result_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="20dp"
             app:srcCompat="@mipmap/ic_results_page_return"
             android:scaleType="centerInside" />
         <LinearLayout
@@ -76,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop = "30dp"
+                android:gravity="start|top"
                 android:text="@string/scan_result_content"
                 android:textSize="14sp"
                 android:textColor="@color/black_text"
@@ -104,7 +105,39 @@
                     android:layout_width="32dp"
                     android:layout_height="31dp"
                     android:src="@mipmap/ic_scan_result_copy"
-
+                    />
+                <TextView
+                    android:id="@+id/tv_scan_result_copy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="@string/scan_result_Copy"
+                    android:textSize="11dp"
+                    android:textColor="@color/grey_text"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+            <!--单个分享按钮-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="148dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:id="@+id/iv_scan_result_share"
+                    android:layout_width="32dp"
+                    android:layout_height="31dp"
+                    android:src="@mipmap/ic_share_selected"
+                    />
+                <TextView
+                    android:id="@+id/tv_scan_result_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="@string/scan_result_Share"
+                    android:textSize="11dp"
+                    android:textColor="@color/grey_text"
+                    android:textStyle="bold"
                     />
             </LinearLayout>
 
