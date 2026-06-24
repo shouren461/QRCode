@@ -175,7 +175,9 @@
     <string name="hint_prefix">www.</string>
     <string name="hint_suffix">.com</string>
     <string name="hint_contact_by_viber">Other can contact you directly on Viber by scanning the QR code you create</string>
-
+    <!--创建结果页面文字-->
+    <string name="create_result_page_title">BarCode</string>
+    <string name="hint_create_result_page_by_viber"> QR codeViber By Scanning dir...</string>
     <!--历史记录页面文字-->
     <string name="history_page_title">History</string>
     <string name="history_page_favorites">Favorites</string>
@@ -188,4 +190,11 @@
     <string name="history_page_delete_confirm_message">Are you sure want to delete selected history</string>
     <string name="history_page_delete_confirm_positive">Yes</string>
     <string name="history_page_delete_confirm_negative">No</string>
+    
+    <!--扫描界面文字-->
+    <string name="scan_page_gallery">Gallery</string>
+    <string name="scan_page_flashlight">Flashlight</string>
+    <string name="scan_page_batch">Batch</string>
+    <!--扫描结果文字-->
+    <string name="scan_result_content">https://fabric.io/javasoldiers-projects/androidappsall.video.downloader.allvideodownloader/dashboard</string>
 </resources>

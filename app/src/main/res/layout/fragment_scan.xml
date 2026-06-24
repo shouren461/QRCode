@@ -89,31 +89,81 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         >
-        <ImageButton
-            android:id="@+id/btn_gallery"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/ic_scan_gallery"
-            />
-        <ImageButton
-            android:id="@+id/btn_flashlight"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btn_gallery"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_scan_gallery"
+                />
+            <TextView
+                android:id="@+id/tv_scan_page_gallery"
+                android:layout_width="32dp"
+                android:layout_height="12dp"
+                android:text="@string/scan_page_gallery"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/ic_scan_lighting"
-            />
-        <ImageButton
-            android:id="@+id/btn_batch"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_flashlight"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_scan_lighting"
+                />
+            <TextView
+                android:id="@+id/tv_scan_page_flashlight"
+                android:layout_width="32dp"
+                android:layout_height="12dp"
+                android:text="@string/scan_page_flashlight"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
-            android:padding="12dp"
-            android:scaleType="centerInside"
-            android:src="@mipmap/ic_scan_batch"
-            />
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_batch"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_scan_batch"
+                />
+            <TextView
+                android:id="@+id/tv_scan_page_batch"
+                android:layout_width="32dp"
+                android:layout_height="12dp"
+                android:text="@string/scan_page_batch"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

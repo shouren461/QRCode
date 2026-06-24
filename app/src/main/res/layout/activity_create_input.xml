@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btnBack"
+            android:id="@+id/btn_back_create_result"
             android:layout_width="24dp"
             android:layout_height="24dp"
             app:srcCompat="@mipmap/ic_results_page_return"

@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btnBack"
+            android:id="@+id/btn_back_create_result"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
@@ -39,10 +39,10 @@
                 />
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="69dp"
+                android:layout_width="wrap_content"
                 android:layout_height="22dp"
                 android:gravity="center"
-                android:text="BarCode"
+                android:text="@string/create_result_page_title"
                 android:textColor="@color/black_text"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:layout_marginTop="14dp"
-            android:text="FaceBook QR codeViber By Scanning dir..."
+            android:text="@string/hint_create_result_page_by_viber"
             android:textSize="16sp"
             android:textColor="@color/black_text"
             android:textStyle="bold"

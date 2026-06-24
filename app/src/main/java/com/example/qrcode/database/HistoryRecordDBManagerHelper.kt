@@ -26,19 +26,14 @@ interface HistoryRecordDao {
     //根据id批量删除历史记录
     @Query("Delete from HISTORY_RECORD_TABLE where id in (:ids)")
     fun deleteHistoryRecordByBatch(ids: List<Long>): Int
-    //更细历史记录
-    @Update
-    fun updateHistoryRecord(historyRecord: HistoryRecord): Int
+
     //查询所有历史记录
     @Query("select * from HISTORY_RECORD_TABLE order by timeStamp DESC")
     fun selectAllHistoryRecord(): List<HistoryRecord>
     //查询已收藏的历史记录列表
     @Query("select * from HISTORY_RECORD_TABLE where isFavorite = 1 order by favoriteTime DESC")
     fun selectFavoriteHistoryRecord(): List<HistoryRecord>
-    //查询用户筛选的二维码类别
-    @JvmSuppressWildcards
-    @Query("select * from HISTORY_RECORD_TABLE where category in (:categories) order by timeStamp ")
-    fun selectFilteredHistoryRecord(categories: List<CreateType>): List<HistoryRecord>
+
     //更新用户收藏记录信息
     @Query("update HISTORY_RECORD_TABLE set isFavorite = :isFavourite,favoriteTime = :timeStamp where id = :id")
     fun updateFavoriteHistoryRecord(id: Long,isFavourite: Boolean,timeStamp: Long?): Int
