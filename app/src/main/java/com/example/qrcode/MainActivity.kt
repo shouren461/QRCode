@@ -106,7 +106,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     private fun initBottomTab() {
         //扫描功能入口，点击监听
         findViewById<View>(R.id.bottom_scan).setOnClickListener {
-            Toast.makeText(this,getString(R.string.toast_feature_is_not_available), Toast.LENGTH_SHORT).show()
+            onBottomTabSelect(TAB_TYPE_SCAN)
         }
         //历史Tab,点击监听
         findViewById<View>(R.id.bottom_history).setOnClickListener {

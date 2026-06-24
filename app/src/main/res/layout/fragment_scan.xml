@@ -27,6 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.4"
         />
+    <!--app:layout_constraintWidth_default:水平方向上的默认尺度计算规则-->
+    <!--app:layout_constraintHeight_default:垂直方向上的默认尺度计算规则-->
 
     <ImageView
         android:id="@+id/iv_scan_frame"
@@ -98,14 +100,15 @@
                 android:id="@+id/btn_gallery"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:padding="12dp"
+                android:padding = "2dp"
                 android:scaleType="centerInside"
                 android:src="@mipmap/ic_scan_gallery"
                 />
             <TextView
                 android:id="@+id/tv_scan_page_gallery"
-                android:layout_width="32dp"
-                android:layout_height="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:padding="2dp"
                 android:text="@string/scan_page_gallery"
                 android:textSize="10sp"
                 android:textColor="@color/white"
@@ -124,14 +127,14 @@
                 android:id="@+id/btn_flashlight"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:padding="12dp"
+                android:padding="2dp"
                 android:scaleType="centerInside"
                 android:src="@mipmap/ic_scan_lighting"
                 />
             <TextView
                 android:id="@+id/tv_scan_page_flashlight"
-                android:layout_width="32dp"
-                android:layout_height="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
                 android:text="@string/scan_page_flashlight"
                 android:textSize="10sp"
                 android:textColor="@color/white"
@@ -150,14 +153,14 @@
                 android:id="@+id/btn_batch"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:padding="12dp"
+                android:padding="2dp"
                 android:scaleType="centerInside"
                 android:src="@mipmap/ic_scan_batch"
                 />
             <TextView
                 android:id="@+id/tv_scan_page_batch"
-                android:layout_width="32dp"
-                android:layout_height="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
                 android:text="@string/scan_page_batch"
                 android:textSize="10sp"
                 android:textColor="@color/white"

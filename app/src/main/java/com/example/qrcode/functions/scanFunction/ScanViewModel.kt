@@ -52,7 +52,8 @@ class ScanViewModel(application: Application): AndroidViewModel(application) {
         viewModelScope.launch {
             withContext(Dispatchers.IO){
                 val historyRecordId =  historyRecordDao.insertHistoryRecord(historyRecordItem)
-                _navigateToResult.value = historyRecordItem to historyRecordId  //跳转到对应结果页
+                //在非主线程中修改LiveData的值必须使用PostValue
+                _navigateToResult.postValue(historyRecordItem to historyRecordId)  //跳转到对应结果页
             }
         }
 
