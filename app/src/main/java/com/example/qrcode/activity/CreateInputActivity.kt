@@ -43,7 +43,7 @@ class CreateInputActivity : BaseActivity<ActivityCreateInputBinding>(ActivityCre
 
     private fun initView(type: CreateType) {
         binding.tvTitle.text = type.name
-        binding.btnBack.setOnClickListener { finish() }
+        binding.btnBackCreateResult.setOnClickListener { finish() }
         //通知ViewModel选择的哪一种二维码类型
         viewModel.selectType(type)
         binding.btnCreate.setOnClickListener {

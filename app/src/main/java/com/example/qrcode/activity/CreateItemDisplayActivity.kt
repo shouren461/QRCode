@@ -21,7 +21,7 @@ class CreateItemDisplayActivity: BaseActivity<ActivityCreateItemDispalyBinding>(
     override fun initData() {}
     override fun initAction() {
         //返回按钮逻辑，销毁当前页面回到上一步
-        binding.btnBack.setOnClickListener { finish() }
+        binding.btnBackCreateResult.setOnClickListener { finish() }
         //保存图片按钮
         binding.btnSave.setOnClickListener {
             qrBitmap?.let { saveQRToAlbum(it) }
