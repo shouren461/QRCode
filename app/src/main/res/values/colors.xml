@@ -24,6 +24,8 @@
     <color name="bg_tabs_holder">#E5E7EC</color> <!--Tab切换未选中背景色-->
     <color name="bg_tabs_selected">#1877F2</color> <!--Tab切换选中颜色-->
     <color name="bg_create_button_color">#9AD0FF</color> <!--创建按钮颜色-->
+    <color name="bg_scan_black">#FF000000</color>
+    <color name="bg_scan_button_container">#ff171718</color>
     <!-- SHOUREN 蓝色主题色 -->
     <!-- 主色、深色主色、强调色已在基础颜色中定义，此处不再重复 -->
 

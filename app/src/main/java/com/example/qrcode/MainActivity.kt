@@ -95,6 +95,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         }
         //切换页面
         switchFragment(cursorTab);
+        //手动刷新底部导航栏UI样式
+        refreshBottomBarUI(cursorTab)
     }
 
     override fun initAction() {}
@@ -102,11 +104,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     //初始化底部导航栏事件
     //初始化底部导航栏
     private fun initBottomTab() {
-        scanTab = findViewById(R.id.iv_bottom_scan)
-        historyTab = findViewById(R.id.iv_bottom_history)
-        createTab = findViewById(R.id.iv_bottom_create)
-        settingsTab = findViewById(R.id.iv_bottom_settings)
-
         //扫描功能入口，点击监听
         findViewById<View>(R.id.bottom_scan).setOnClickListener {
             Toast.makeText(this,getString(R.string.toast_feature_is_not_available), Toast.LENGTH_SHORT).show()
@@ -125,11 +122,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         findViewById<View>(R.id.bottom_settings).setOnClickListener {
             onBottomTabSelect(TAB_TYPE_SETTINGS)
         }
-        //初始化底栏状态:设置默认选中状态"创建"图标
-        scanTab.setImageResource(R.mipmap.ic_scan_unselected)
-        historyTab.setImageResource(R.mipmap.ic_history_unselected)
-        createTab.setImageResource(R.mipmap.ic_create_selected)
-        settingsTab.setImageResource(R.mipmap.ic_setting_unselected)
     }
 
     //处理底部Tab选中的UI更新逻辑
@@ -138,47 +130,51 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             return   //如果是当前选中的Tab，直接返回
         } else {
             switchFragment(type) //否则切换Fragment
-            when(type){
-                TAB_TYPE_SCAN ->{
-                    binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_selected)
-                    binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_selected_color))
-                    binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_unselected)
-                    binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_unselected)
-                    binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_unselected)
-                    binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                }
-                TAB_TYPE_HISTORY->{
-                    binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_unselected)
-                    binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_selected)
-                    binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_selected_color))
-                    binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_unselected)
-                    binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_unselected)
-                    binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                }
-                TAB_TYPE_CREATE ->{
-                    binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_unselected)
-                    binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_unselected)
-                    binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_selected)
-                    binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_selected_color))
-                    binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_unselected)
-                    binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                }
-                TAB_TYPE_SETTINGS ->{
-                    binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_unselected)
-                    binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_unselected)
-                    binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_unselected)
-                    binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_unselected_color))
-                    binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_selected)
-                    binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_selected_color))
-                }
+            refreshBottomBarUI(type) //刷新底部图标
+        }
+    }
+    //刷新底部导航栏UI图标
+    fun refreshBottomBarUI(type: Int){
+        when(type){
+            TAB_TYPE_SCAN ->{
+                binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_selected)
+                binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_selected_color))
+                binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_unselected)
+                binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_unselected)
+                binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_unselected)
+                binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+            }
+            TAB_TYPE_HISTORY->{
+                binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_unselected)
+                binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_selected)
+                binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_selected_color))
+                binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_unselected)
+                binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_unselected)
+                binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+            }
+            TAB_TYPE_CREATE ->{
+                binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_unselected)
+                binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_unselected)
+                binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_selected)
+                binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_selected_color))
+                binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_unselected)
+                binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+            }
+            TAB_TYPE_SETTINGS ->{
+                binding.layoutBottomBar.ivBottomScan.setImageResource(R.mipmap.ic_scan_unselected)
+                binding.layoutBottomBar.tvBottomScan.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomHistory.setImageResource(R.mipmap.ic_history_unselected)
+                binding.layoutBottomBar.tvBottomHistory.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomCreate.setImageResource(R.mipmap.ic_create_unselected)
+                binding.layoutBottomBar.tvBottomCreate.setTextColor(getColor(R.color.bottom_tab_unselected_color))
+                binding.layoutBottomBar.ivBottomSettings.setImageResource(R.mipmap.ic_setting_selected)
+                binding.layoutBottomBar.tvBottomSettings.setTextColor(getColor(R.color.bottom_tab_selected_color))
             }
         }
     }

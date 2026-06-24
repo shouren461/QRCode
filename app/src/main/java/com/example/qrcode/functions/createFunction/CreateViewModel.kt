@@ -55,5 +55,5 @@ class CreateViewModel(application: Application) : AndroidViewModel(application) 
     }
     //根据输入内容给较长的字符串截取一部分文字
     private fun generateHistoryTitle(values: Map<String, String>, content: String): String{
-        return values["SSID"] ?: values["Text"] ?: values["URL"] ?: values["Name"] ?: content.take(20)
+        return values["ssid"] ?: values["text"] ?: values["url"] ?: values["name"] ?: content.take(20)
     }
