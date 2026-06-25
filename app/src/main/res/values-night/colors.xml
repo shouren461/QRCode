@@ -10,12 +10,15 @@
     <color name="transparent">#00000000</color>
 
     <!-- 语义化颜色（浅色模式下为白/黑，深色模式下语义反转） -->
-    <color name="white">#1E1E1E</color>                <!-- 原纯白背景 -> 深色表面 -->
+    <color name="white">#1F222A</color>                <!-- 原纯白背景 -> 深色表面 -->
     <color name="black">#FFFFFF</color>               <!-- 原深灰文字 -> 浅灰白文字（确保可读性） -->
     <color name="grey">#121212</color>                <!-- 原亮灰色 -> 深灰色（用于深色模式的灰底） -->
     <color name="scan_frame">#404040</color>          <!-- 原扫描框灰色 -> 适配深色背景 -->
     <color name="black_text">#FFFFFF</color>
-
+    <color name="bg_input_color">#2F3444</color>
+    <color name="bg_create_button_color">#0188FE</color> <!--创建按钮颜色黑夜模式-->
+    <color name="bg_history_header">#1F222A</color>
+    <color name="bg_history_record">#2F3444</color>
     <!-- ViewLib 组件专用颜色 - 深色模式 -->
     <!-- 对话框 -->
     <color name="dialog_bg">#1E1E1E</color>           <!-- 弹窗背景（比主背景稍亮，体现卡片层次） -->

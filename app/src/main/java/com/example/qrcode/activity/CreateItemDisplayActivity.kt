@@ -1,8 +1,8 @@
 package com.example.qrcode.activity
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.Bitmap
-import android.util.Log
 import android.widget.Toast
 import com.example.qrcode.R
 import androidx.lifecycle.lifecycleScope
@@ -33,6 +33,7 @@ class CreateItemDisplayActivity: BaseActivity<ActivityCreateItemDispalyBinding>(
     }
 
     override fun initView() {
+        updateDarkModeIconStyle()
         val typeStr = intent.getStringExtra("type") ?: ""
         //将字符串转换为枚举类型
         type = try { CreateType.valueOf(typeStr) }catch (e: Exception){ CreateType.Text //类型转换失败，默认是文本类型
@@ -72,5 +73,15 @@ class CreateItemDisplayActivity: BaseActivity<ActivityCreateItemDispalyBinding>(
             } ?: Toast.makeText(this,getString(R.string.error_save_unknown), Toast.LENGTH_SHORT).show()
         }
     }
-
+    //黑夜模式下更新创建结果页面 返回/收藏 图标
+    fun updateDarkModeIconStyle(){
+        val isDarkMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+        if (isDarkMode){
+            binding.btnBackCreateResult.setImageResource(R.mipmap.ic_results_page_return_dark_mode)
+            binding.ivFavorites.setImageResource(R.mipmap.ic_results_favorites_dark_mode)
+        }else{
+            binding.btnBackCreateResult.setImageResource(R.mipmap.ic_results_page_return)
+            binding.ivFavorites.setImageResource(R.mipmap.ic_results_favorites)
+        }
+    }
 }

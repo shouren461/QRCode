@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.qrcode.R
@@ -28,6 +29,7 @@ class ScanItemDisplayActivity : BaseActivity<ActivityScanItemDisplayBinding>(
     override fun initView() {
         binding.tvScanResultContent.text = scanItemContent
         checkFavoritesStatus()  //检查收藏图标选中状态
+        updateDarkModeIconStyle() //更新黑暗模式下的图标样式
     }
     //绑定监听事件
     override fun initAction() {
@@ -79,9 +81,22 @@ class ScanItemDisplayActivity : BaseActivity<ActivityScanItemDisplayBinding>(
     //根据收藏状态更新UI图标状态
     fun updateFavoritesIcon() {
         binding.ivScanResultFavorites.setImageResource(
-            if (isMarkedFavorite) R.mipmap.ic_favorites_selected else R.mipmap.ic_favorites_unselected
+            if (isMarkedFavorite) R.mipmap.ic_favorites_selected else R.mipmap.ic_results_favorites_dark_mode
         )
     }
-
-
+    //更新黑暗模式下的图标 返回/收藏 按钮
+    fun updateDarkModeIconStyle(){
+        val isDarkMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+        if (isDarkMode){
+            binding.btnScanResultBack.setImageResource(R.mipmap.ic_results_page_return_dark_mode)
+            binding.ivScanResultFavorites.setImageResource(R.mipmap.ic_results_favorites_dark_mode)
+            binding.ivScanResultCopy.setImageResource(R.mipmap.ic_result_copy_dark)
+            binding.ivScanResultShare.setImageResource(R.mipmap.ic_share_dark_mode)
+        }else{
+            binding.btnScanResultBack.setImageResource(R.mipmap.ic_results_page_return)
+            binding.ivScanResultFavorites.setImageResource(R.mipmap.ic_favorites_unselected)
+            binding.ivScanResultCopy.setImageResource(R.mipmap.ic_scan_result_copy)
+            binding.ivScanResultShare.setImageResource(R.mipmap.ic_share_selected)
+        }
+    }
 }

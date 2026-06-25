@@ -177,7 +177,7 @@
     <string name="hint_suffix">.com</string>
     <string name="hint_contact_by_viber">Other can contact you directly on Viber by scanning the QR code you create</string>
     <!--创建结果页面文字-->
-    <string name="create_result_page_title">BarCode</string>
+    <string name="create_result_page_title">QR Code</string>
     <string name="hint_create_result_page_by_viber"> QR codeViber By Scanning dir...</string>
     <!--历史记录页面文字-->
     <string name="history_page_title">History</string>

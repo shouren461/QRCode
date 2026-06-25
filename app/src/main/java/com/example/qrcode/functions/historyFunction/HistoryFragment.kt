@@ -1,6 +1,7 @@
 package com.example.qrcode.functions.historyFunction
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
@@ -34,6 +35,7 @@ class HistoryFragment: BaseFragment<FragmentHistoryBinding>(FragmentHistoryBindi
     private var filterDialog: PopupWindow ?= null
 
     override fun initView() {
+        updateDarkModeIconStyle()  //更新黑暗模式下的图标
         initRCView()
         initClickListener()
         observeState()
@@ -186,6 +188,16 @@ class HistoryFragment: BaseFragment<FragmentHistoryBinding>(FragmentHistoryBindi
         binding.tvHistoryHeaderCategory.visibility = if (isFavorite) View.VISIBLE else View.GONE
         //全选按钮仅在编辑模式下可见
         binding.ivHistorySelectAll.visibility = if(isEdit) View.VISIBLE else View.GONE
+    }
+
+    //更新黑暗模式下的返回键图标
+    fun updateDarkModeIconStyle(){
+        val isDarkMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+        if (isDarkMode) {
+            binding.ivHistoryBack.setImageResource(R.mipmap.ic_results_page_return_dark_mode)
+        } else {
+            binding.ivHistoryBack.setImageResource(R.mipmap.ic_results_page_return)
+        }
     }
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
