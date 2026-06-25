@@ -52,8 +52,9 @@ class HistoryFragment: BaseFragment<FragmentHistoryBinding>(FragmentHistoryBindi
                     toggleSelectedIdState(record.historyRecordItem.id)
                 }else{
                     val intent = Intent(context, CreateItemDisplayActivity::class.java).apply {
-                        putExtra("type",record.historyRecordItem.category.name)
-                        putExtra("content",record.historyRecordItem.content)
+                        putExtra("EXTRA_CREATE_RESULT_TYPE",record.historyRecordItem.category.name)
+                        putExtra("EXTRA_CREATE_RESULT_CONTENT",record.historyRecordItem.content)
+                        putExtra("EXTRA_HISTORY_RECORD_ID",record.historyRecordItem.id)
                     }
                     startActivity(intent)
                 }

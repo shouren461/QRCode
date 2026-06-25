@@ -10,6 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.qrcode.R
 import com.example.qrcode.database.HistoryRecordDB
 import com.example.qrcode.databinding.ActivityScanItemDisplayBinding
+import com.example.qrcode.functions.createFunction.CreateAdapter
+import com.example.qrcode.functions.createFunction.CreateType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -19,15 +21,21 @@ class ScanItemDisplayActivity : BaseActivity<ActivityScanItemDisplayBinding>(
     ActivityScanItemDisplayBinding::inflate) {
     //定义变量
     private var scanItemContent: String = ""
+    private var scanItemTypeStr: String = ""
     private var historyRecordId: Long = -1
     private var isMarkedFavorite: Boolean = false
     override fun initData() {
         scanItemContent = intent.getStringExtra("EXTRA_SCAN_CONTENT").orEmpty()
+        scanItemTypeStr = intent.getStringExtra("EXTRA_SCAN_TYPE").orEmpty()
         historyRecordId = intent.getLongExtra("EXTRA_SCAN_ID",-1L)
     }
 
     override fun initView() {
         binding.tvScanResultContent.text = scanItemContent
+        binding.tvScanResultTitle.text = scanItemTypeStr
+        //将二维码字符串类型转换为枚举类型,类型转换失败默认是枚举类型
+        val type = try { CreateType.valueOf(scanItemTypeStr) }catch (e: Exception){ CreateType.Text }
+        binding.ivScanResultTitleImg.setImageResource(CreateAdapter.getIconRes(type))
         checkFavoritesStatus()  //检查收藏图标选中状态
         updateDarkModeIconStyle() //更新黑暗模式下的图标样式
     }

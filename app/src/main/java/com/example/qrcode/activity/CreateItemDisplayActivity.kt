@@ -21,6 +21,7 @@ class CreateItemDisplayActivity: BaseActivity<ActivityCreateItemDispalyBinding>(
     private lateinit var type: CreateType //二维码业务类型
     private var qrBitmap: Bitmap ?= null
     private var historyRecordId: Long = -1L
+    private lateinit var content: String
     private var isMarkedFavorite: Boolean = false  //检查收藏状态
 
     override fun initData() {
@@ -41,18 +42,19 @@ class CreateItemDisplayActivity: BaseActivity<ActivityCreateItemDispalyBinding>(
 
     override fun initView() {
         updateDarkModeIconStyle()
-        val typeStr = intent.getStringExtra("type") ?: ""
+        val typeStr = intent.getStringExtra("EXTRA_CREATE_RESULT_TYPE") ?: ""
         //将字符串转换为枚举类型
         type = try { CreateType.valueOf(typeStr) }catch (e: Exception){ CreateType.Text //类型转换失败，默认是文本类型
         }
         binding.ivTitleImg.setImageResource(CreateAdapter.getIconRes(type))
+        binding.tvTitle.text = typeStr
         createQR()
         //创建视图时检查收藏图标状态
         checkAndUpdateFavorite()
     }
     //生成并显示二维码图片
     private fun createQR() {
-        val content = intent.getStringExtra("content") ?: ""
+        content = intent.getStringExtra("EXTRA_CREATE_RESULT_CONTENT") ?: ""
         lifecycleScope.launch {
             qrBitmap = QRHelper.createQRBitmap(content) //生成二维码位图
             //将生成的位图设置给iv_qr控件

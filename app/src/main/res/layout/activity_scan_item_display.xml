@@ -70,7 +70,8 @@
             android:layout_height="160dp"
             android:layout_marginStart="43dp"
             android:layout_marginEnd="43dp"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            tools:ignore="MissingConstraints">
             <TextView
                 android:id="@+id/tv_scan_result_content"
                 android:layout_width="match_parent"
@@ -135,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:text="@string/scan_result_Share"
-                    android:textSize="11dp"
+                    android:textSize="11sp"
                     android:textColor="@color/grey_text"
                     android:textStyle="bold"
                     />
