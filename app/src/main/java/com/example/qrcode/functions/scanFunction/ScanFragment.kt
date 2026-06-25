@@ -1,15 +1,21 @@
 package com.example.qrcode.functions.scanFunction
 
 import android.Manifest
+import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Camera
 import android.net.Uri
 import android.view.View
+import android.widget.Button
 import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.OptIn
+import androidx.appcompat.app.AlertDialog
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ExperimentalGetImage
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST
 import androidx.camera.core.ImageProxy
@@ -147,6 +153,7 @@ class ScanFragment: BaseFragment<FragmentScanBinding>(FragmentScanBinding::infla
     }
 
     //处理动态相机抛出的每一帧图像,imageProxy代表原始数据包裹
+    @OptIn(ExperimentalGetImage::class)  //忽略实验API可能存在的风险
     private fun processImageProxy(imageProxy: ImageProxy) {
         val scanner = BarcodeScanning.getClient()
         if (viewModel.isProcessing == true){//如已经有待处理图帧，直接抛弃后续所有帧
@@ -185,8 +192,8 @@ class ScanFragment: BaseFragment<FragmentScanBinding>(FragmentScanBinding::infla
                   if (barcodes.isNotEmpty()){
                       //识别成功，取第一项识别的结果
                       barcodes[0].rawValue?.let { viewModel.processScanResult(it) }
-                  }else{ //识别失败，弹出图片无二维码提示
-                      Toast.makeText(requireContext(),getString(R.string.error_qr_image_not_found), Toast.LENGTH_SHORT).show()
+                  }else{ //识别失败，弹出图片无二维码对话框
+                      showScanFailedDialog()
                   }
                 }
                 .addOnFailureListener {e->
@@ -195,6 +202,25 @@ class ScanFragment: BaseFragment<FragmentScanBinding>(FragmentScanBinding::infla
         }catch (e: Exception){
             Toast.makeText(requireContext(),getString(R.string.error_loading_img), Toast.LENGTH_SHORT).show()
         }
+    }
+    private fun showScanFailedDialog(){
+        val context = context ?: return
+        //创建builder
+     val builder = AlertDialog.Builder(context)
+        //创建对话框视图并初始化控件
+        val dialogView = layoutInflater.inflate(R.layout.dialog_scan_failed,null)
+        val tvMessage  = dialogView.findViewById<TextView>(R.id.tv_dialog_message)
+        val btnRetry = dialogView.findViewById<Button>(R.id.btn_dialog_ok)
+        //将布局设置给builder
+        builder.setView(dialogView)
+        builder.setCancelable(true)  //允许用户在外部点击取消对话框
+        //创建并显示对话框
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawableResource(R.color.transparent) //去掉系统默认的背景(这样才能显示对话框的圆角)
+        btnRetry.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 
     override fun onResume() {

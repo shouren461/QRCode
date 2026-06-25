@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="233dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    android:background="@drawable/bg_item_card"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/scan_page_dialog_title"
+            android:textColor="@color/black_text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="@string/scan_page_dialog_content"
+            android:textColor="@color/grey_text"
+            android:textSize="16sp" />
+
+        <!-- 自定义确定按钮 -->
+        <Button
+            android:id="@+id/btn_dialog_ok"
+            android:layout_width="252dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/deep_blue"
+            android:text="@string/scan_page_dialog_positive"
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
