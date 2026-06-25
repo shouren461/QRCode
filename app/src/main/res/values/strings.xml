@@ -200,6 +200,7 @@
     <string name="scan_page_dialog_title">QR Code not found</string>
     <string name="scan_page_dialog_content">Make sure your QR code/barcode is clear and completely inside the frame</string>
     <string name="scan_page_dialog_positive">Retry</string>
+    <string name="scan_page_dialog_feedback">Feedback</string>
     <string name="scan_page_dialog_negative">Cancel</string>
     <!--扫描结果文字-->
     <string name="scan_result_content">https://fabric.io/javasoldiers-projects/androidappsall.video.downloader.allvideodownloader/dashboard</string>
