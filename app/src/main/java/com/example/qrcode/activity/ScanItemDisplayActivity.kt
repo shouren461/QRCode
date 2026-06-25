@@ -81,7 +81,16 @@ class ScanItemDisplayActivity : BaseActivity<ActivityScanItemDisplayBinding>(
     //根据收藏状态更新UI图标状态
     fun updateFavoritesIcon() {
         binding.ivScanResultFavorites.setImageResource(
-            if (isMarkedFavorite) R.mipmap.ic_favorites_selected else R.mipmap.ic_results_favorites_dark_mode
+            if (isMarkedFavorite) {
+                R.mipmap.ic_favorites_selected
+            } else{
+                val isDarkMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+                if (isDarkMode){
+                    R.mipmap.ic_results_favorites_dark_mode
+                }else{
+                    R.mipmap.ic_favorites_unselected
+                }
+            }
         )
     }
     //更新黑暗模式下的图标 返回/收藏 按钮

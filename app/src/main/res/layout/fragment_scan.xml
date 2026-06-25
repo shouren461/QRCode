@@ -107,15 +107,15 @@
                 android:scaleType="centerInside"
                 android:src="@mipmap/ic_scan_gallery"
                 />
+
             <TextView
                 android:id="@+id/tv_scan_page_gallery"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:text="@string/scan_page_gallery"
+                android:textColor="@color/bg_scan_white_text"
                 android:textSize="10sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -140,7 +140,7 @@
                 android:layout_height="15dp"
                 android:text="@string/scan_page_flashlight"
                 android:textSize="10sp"
-                android:textColor="@color/white"
+                android:textColor="@color/bg_scan_white_text"
                 android:textStyle="bold"
                 />
         </LinearLayout>
@@ -167,7 +167,7 @@
                 android:layout_height="15dp"
                 android:text="@string/scan_page_batch"
                 android:textSize="10sp"
-                android:textColor="@color/white"
+                android:textColor="@color/bg_scan_white_text"
                 android:textStyle="bold"
                 />
         </LinearLayout>

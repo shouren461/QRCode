@@ -24,7 +24,8 @@
     <color name="bg_tabs_holder">#E5E7EC</color> <!--Tab切换未选中背景色-->
     <color name="bg_tabs_selected">#1877F2</color> <!--Tab切换选中颜色-->
     <color name="bg_create_button_color">#9AD0FF</color> <!--创建按钮颜色-->
-    <color name="bg_scan_black">#FF000000</color>
+    <color name="bg_scan_black">#FF000000</color><!--扫描预览视图背景色-->
+    <color name="bg_scan_white_text">#FFFFFF</color> <!--扫描页提示文字颜色-->
     <color name="bg_scan_button_container">#80171718</color><!--半透明黑色，可以看到后面的预览内容-->
     <color name="bg_history_header">#EAEDF1</color> <!--历史状态栏和标题项-->
     <color name="bg_history_record">#FFFFFF</color> <!--历史记录项背景色-->

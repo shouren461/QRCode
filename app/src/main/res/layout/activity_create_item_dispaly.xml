@@ -49,7 +49,7 @@
                 />
         </LinearLayout>
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_favorites"
+            android:id="@+id/iv_create_results_favorites"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@mipmap/ic_results_favorites"

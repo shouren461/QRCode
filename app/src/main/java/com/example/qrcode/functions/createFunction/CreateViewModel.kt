@@ -24,8 +24,8 @@ class CreateViewModel(application: Application) : AndroidViewModel(application) 
     val strategy: LiveData<ProtocolStrategy?> = _strategy
     private val historyRecordDao = HistoryRecordDB.getDatabase(application).historyRecordDao()
     //生成的最终协议结果(用于跳转结果页)
-    private val _createResult = MutableLiveData<String>()
-    val createResult: LiveData<String> = _createResult
+    private val _createResult = MutableLiveData< Pair<String, Long>>()
+    val createResult: LiveData<Pair<String, Long>> = _createResult
     //初始化或者切换当前要创建的二维码类型
     fun selectType(type: CreateType){
         _strategy.value = StrategyFactory.getStrategy(type)
@@ -35,7 +35,7 @@ class CreateViewModel(application: Application) : AndroidViewModel(application) 
         val currentStrategy = _strategy.value ?: return
         val content = currentStrategy.encode(values, switches)
         if (content.isEmpty()){
-            _createResult.value = ""
+            _createResult.value = "" to -1
             return
         }
 
@@ -46,11 +46,12 @@ class CreateViewModel(application: Application) : AndroidViewModel(application) 
                     content = content,
                     category = currentStrategy.type
                 )
-                withContext(Dispatchers.IO){
+                val insertHistoryRecordID = withContext(Dispatchers.IO){
                     historyRecordDao.insertHistoryRecord(historyRecord)
                 }
+                _createResult.value =  content to insertHistoryRecordID
             }
-        _createResult.value =  content
+
         }
     }
     //根据输入内容给较长的字符串截取一部分文字

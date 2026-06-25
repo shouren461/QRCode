@@ -132,11 +132,12 @@ class CreateInputActivity : BaseActivity<ActivityCreateInputBinding>(ActivityCre
         }
 
         //当协议内容生成成功后，执行跳转到结果展示页
-        viewModel.createResult.observe(this) { content ->
+        viewModel.createResult.observe(this) { (content,insertId) ->
             if (content.isNotEmpty()) {
                 val intent = Intent(this, CreateItemDisplayActivity::class.java).apply {
                     putExtra("type", viewModel.strategy.value?.type?.name)
                     putExtra("content", content)
+                    putExtra("EXTRA_HISTORY_RECORD_ID",insertId)
                 }
                 startActivity(intent)
             }
