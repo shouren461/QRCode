@@ -1,4 +1,5 @@
 项目介绍:
+
 1,创建功能:采用策略工厂模式(Strategy Factory)来解耦不同二维码类型的协议编码和表单配置，在输入界面通过FormAdapter来实现动态渲染列表视图
 
 2，历史记录:数据库采用Room数据结构，创建HistoryRecord实体类，通过将滚动视图类型分为标题项(Header)和记录项(Record),来实现记录项的收藏(Favorite)，筛选(Filter),批量删除(deletByBatch)
